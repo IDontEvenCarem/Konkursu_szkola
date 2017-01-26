@@ -1,0 +1,61 @@
+<DOCTYPE html>
+<html>
+
+<!-- ==================HEAD================= -->
+<head>
+<meta charset='utf-8' name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='css/bootstrap.css'>
+<link rel="stylesheet" href="css/index.css">
+</head>
+
+<!-- ==================BODY================= -->
+<body>
+<script src="js/jq.js"></script>
+
+<script>
+
+$.get("/api/z/n", function (data, textStatus, jqXHR) {
+    console.log(data);
+    for(i = 0; i < data.length; i++){
+        var j = data[i]
+        console.log(j);
+        $(".z_n").append('<div class="grupa"><h4>' + j.i_from + '</h4><p> ● '+ j.i_osoba1 + ' ― ' + j.e_osoba1 +'</p>' + '<p> ● '+ j.i_osoba2 + ' ― ' + j.e_osoba2 +'</p></div>')
+    }
+});
+
+$.get("/api/z/g", function (data, textStatus, jqXHR) {
+    console.log(data);
+    for(i = 0; i < data.length; i++){
+        var j = data[i]
+        console.log(j);
+        $(".z_g").append('<div class="grupa">' + '<p> ● '+ j.i_from + " ― " + j.i_osoba1  + ' ― ' + j.e_osoba1 +'</p></div>')
+    }
+});
+</script>
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-12' style='text-align: center;'>
+            <h1><strong>Wielki test o Wyspiańskim</strong></h1>
+            
+		</div>
+	</div>
+    <div class="row">
+        <div class="col-md-3 left-nav shadow">
+            <ul>
+                <li><a href="/"><strong>Wiadomości</strong></a></li>
+                <li><a href="/zapisy"><strong>Zapisy do części testowej</strong></a></li>
+                <li><a href="/zapisy_graficzne"><strong>Zapisy do części graficznej</strong></a></li>
+                <li><a href="/zgloszone"><strong>Osoby zgłoszone</strong></a></li>
+                <li><a href="/regulamin"><strong>Regulamin</strong></a></li>
+            </ul>
+        </div>
+        <div class="col-md-9 main-area shadow">
+            <h2 class="text-center">Zgłoszone zespoły</h2><br>
+            <span class="z_n"><h3>Zgłoszenia do części testowej</h3></span>
+            <span class="z_g"><h3>Zgłoszenia do części graficznej</h3></span>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
