@@ -12,6 +12,8 @@
 <body>
 <script src="js/jq.js"></script>
 
+<script src="js/modernizr-custom.js"></script>
+<script src="js/index.js"></script>
 <script>
 
 $.get("/api/z/n", function (data, textStatus, jqXHR) {
@@ -20,6 +22,7 @@ $.get("/api/z/n", function (data, textStatus, jqXHR) {
         var j = data[i]
         console.log(j);
         $(".z_n").append('<div class="grupa"><h4>' + j.i_from + '</h4><p> ● '+ j.i_osoba1 + ' ― ' + j.e_osoba1 +'</p>' + '<p> ● '+ j.i_osoba2 + ' ― ' + j.e_osoba2 +'</p></div>')
+        ResizeNavs();
     }
 });
 
@@ -29,8 +32,10 @@ $.get("/api/z/g", function (data, textStatus, jqXHR) {
         var j = data[i]
         console.log(j);
         $(".z_g").append('<div class="grupa">' + '<p> ● '+ j.i_from + " ― " + j.i_osoba1  + ' ― ' + j.e_osoba1 +'</p></div>')
+        ResizeNavs();
     }
 });
+
 </script>
 <div class='container'>
 	<div class='row'>
