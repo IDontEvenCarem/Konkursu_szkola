@@ -1,0 +1,368 @@
+<form id="main_form">
+<div id="z_1" class="zadanie">
+    <h3>Zadanie 1</h3>
+    <p class="pytanie">Jaką techniką artystyczną najczęściej posługiwał się Wyspiański?</p>
+    
+        <label><input type="radio" name="a_1" value="Akwarela">Akwarela &#8194</label><br>
+        <label><input type="radio" name="a_1" value="Pastel">Pastel &#8194</label><br>
+        <label><input type="radio" name="a_1" value="Szkic">Szkic &#8194</label><br>
+        <label><input type="radio" name="a_1" value="Miedzioryt">Miedzioryt &#8194</label><br>
+    
+</div>
+<div id="z_2" class="zadanie">
+    <h3>Zadanie 2</h3>
+    <p class="pytanie">W jakim stylu tworzył wyspiański? Podaj dwa nurty</p>
+
+        <label><input type="radio" name="a_2" value="1">Teofila Teodora Pytko &#8194</label><br>
+        <label><input type="radio" name="a_2" value="2">Teofila Stankiewiczówna &#8194</label><br>
+        <label><input type="radio" name="a_2" value="3">Teodora Spytko &#8194</label><br>
+        <label><input type="radio" name="a_2" value="4">Janina Rogowska &#8194</label><br>
+    
+</div>
+<div id="z_3" class="zadanie">
+    <h3>Zadanie 3</h3>
+    <p class="pytanie">Czyje wesele zainspirowało Wyspiańskiego do napisania "Wesela"?</p>
+
+            <label><input type="radio" name="a_3" value="Mehoffera">Mehoffera &#8194</label><br>
+            <label><input type="radio" name="a_3" value="Szujkowskiego">Szujkowskiego &#8194</label><br>
+            <label><input type="radio" name="a_3" value="Przybyszewskiego">Przybyszewskiego &#8194</label><br>
+            <label><input type="radio" name="a_3" value="Rydla">Rydla &#8194</label><br>
+</div>
+<div id="z_4" class="zadanie">
+<h3>Zadanie 4</h3>
+<p class="pytanie">Podaj nazwę tygodnika, którego kierownikiem graficznym był Wyspiański</p>
+
+        <label><input type="radio" name="a_4" value="Awangarda">Awangarda &#8194</label><br>
+        <label><input type="radio" name="a_4" value="Głos Krakowa">Głos Krakowa &#8194</label><br>
+        <label><input type="radio" name="a_4" value="Życie">Życie &#8194</label><br>
+        <label><input type="radio" name="a_4" value="Chimera">Chimera &#8194</label><br>
+</div>
+<div id="z_5" class="zadanie">
+<h3>Zadania 5-8</h3>
+<p class="pytanie">Rozpoznaj postaci "Wesela"</p>
+        <p>Melancholik i mizogin, gotów do flirtów, ale nie do miłości. Nazywa sam siebie żurawcem.</p>
+        <select class="select form-control input-sm" name="a_5">
+            <option value="default">Wybierz...</option>
+            <option value="Poeta">Poeta</option>
+            <option value="Gospodarz">Gospodarz</option>
+            <option value="Wernyhora">Wernyhora</option>
+            <option value="Czepiec">Czepiec</option>
+            <option value="Pan Młody">Pan Młody</option>
+        </select>
+        <br>
+        <p>Rozgadany, roześmiany, nie zważa na zasady chłopskiej kultury, każe Pannie Młodej tańczyć boso.</p>
+        <select class="select form-control input-sm" name="a_6">
+            <option value="default">Wybierz...</option>
+            <option value="Poeta">Poeta</option>
+            <option value="Gospodarz">Gospodarz</option>
+            <option value="Wernyhora">Wernyhora</option>
+            <option value="Czepiec">Czepiec</option>
+            <option value="Pan Młody">Pan Młody</option>
+        </select>
+        <br>
+        <p>Szanuje chłopów, widzi w nich królewską godność.</p>
+        <select class="select form-control input-sm" name="a_7">
+            <option value="default">Wybierz...</option>
+            <option value="Poeta">Poeta</option>
+            <option value="Gospodarz">Gospodarz</option>
+            <option value="Wernyhora">Wernyhora</option>
+            <option value="Czepiec">Czepiec</option>
+            <option value="Pan Młody">Pan Młody</option>
+        </select>
+        <br>
+        <p>Krewki, kłótliwy, rwący się do bijatyki jak popije, ale ciekawy świata, pełen patriotycznego zapału.</p>
+        <select class="select form-control input-sm" name="a_8">
+            <option value="default">Wybierz...</option>
+            <option value="Poeta">Poeta</option>
+            <option value="Gospodarz">Gospodarz</option>
+            <option value="Wernyhora">Wernyhora</option>
+            <option value="Czepiec">Czepiec</option>
+            <option value="Pan Młody">Pan Młody</option>
+        </select>
+        <br>
+</div>
+<div id="z_9" class="zadanie">
+<h3>Zadanie 9</h3>
+<p class="pytanie">Wybierz fałszywe zakończnie zdania: Wyspiański... </p>
+
+        <label><input type="radio" name="a_9" value="1">Uczył się W Gimnazjum w Austrowęgrach &#8194</label><br>
+        <label><input type="radio" name="a_9" value="2">Uczęszczał na filozofię na Uniwersytecie Jagielońskim &#8194</label><br>
+        <label><input type="radio" name="a_9" value="3">Przed ślubem miał troje dzieci &#8194</label><br>
+        <label><input type="radio" name="a_9" value="4">W 1891 wyjechał w podróż po Europie  &#8194</label><br>
+
+</div>
+<div id="z_10" class="zadanie" style="height: 520px;">
+<h3>Zadanie 10</h3>
+    <img src="/img/w3.jpg" style="width: 200px;float: right;">
+    <p class="pytanie">Do jakiego nurtu artystycznego można zaliczyć najsłynniejsze dzieło Wyspiańskiego, witraż "Bóg Ojciec"</p>
+
+        <label><input type="radio" name="a_10" value="1">Impresjonizm &#8194</label><br>
+        <label><input type="radio" name="a_10" value="2">Ekspresjonizm &#8194</label><br>
+        <label><input type="radio" name="a_10" value="3">Realizm &#8194</label><br>
+        <label><input type="radio" name="a_10" value="4">Surrealizm  &#8194</label><br>
+
+</div>
+<div id="z_11" class="zadanie">
+<h3>Zadania 11-14</h3>
+<p class="pytanie">Podaj daty wydania dramatów Wyspiańskiego</p>
+
+        <label>Warszawianka &#8194<input class="form-control" type="text" name="a_11"></label><br>
+        <label>Wesele &#8194<input class="form-control" type="text" name="a_12"></label><br>
+        <label>Noc Listopadowa &#8194<input class="form-control" type="text" name="a_13"></label><br>
+        <label>Wyzwolenie &#8194<input class="form-control" type="text" name="a_14"></label><br>
+</div>
+<div id="z_15" class="zadanie">
+<h3>Zadanie 15</h3>
+<p class="pytanie">Pod jakim adresem urodził się Wyspiański?</p>
+
+        <label><input type="radio" name="a_15" value="1">Krowoderska 79 &#8194</label><br>
+        <label><input type="radio" name="a_15" value="2">Krupnicza 26 &#8194</label><br>
+        <label><input type="radio" name="a_15" value="3">Kanonicza 25 &#8194</label><br>
+        <label><input type="radio" name="a_15" value="4">Kopernika 1  &#8194</label><br>
+</div>
+<div id="z_16" class="zadanie">
+<h3>Zadanie 16</h3>
+<img src="/img/w4.jpg">
+<p class="pytanie">Kim dla Wyspiańskiego jest kobieta na powyższym obrazie?</p>
+
+        <label><input type="radio" name="a_16" value="1">Siostrą &#8194</label><br>
+        <label><input type="radio" name="a_16" value="2">Matką &#8194</label><br>
+        <label><input type="radio" name="a_16" value="3">Żoną &#8194</label><br>
+        <label><input type="radio" name="a_16" value="4">Kochanką &#8194</label><br>
+</div>
+<div id="z_17" class="zadanie">
+<h3>Zadanie 17</h3>
+<p class="pytanie">W jaki sposób umarł Wyspiański?</p>
+
+        <label><input type="radio" name="a_17" value="1">Na kiłę &#8194</label><br>
+        <label><input type="radio" name="a_17" value="2">Na gruźlicę &#8194</label><br>
+        <label><input type="radio" name="a_17" value="3">W wypadku &#8194</label><br>
+        <label><input type="radio" name="a_17" value="4">Ze starości &#8194</label><br>
+</div>
+<div id="z_18" class="zadanie">
+<h3>Zadanie 18</h3>
+<p class="pytanie">Jak nazywa się miejscowość, w której rozgrywa się akcja "Wesela"</p>
+
+        <label><input type="radio" name="a_18" value="1">Maciejowce &#8194</label><br>
+        <label><input type="radio" name="a_18" value="2">Bronowice &#8194</label><br>
+        <label><input type="radio" name="a_18" value="3">Rydlówka &#8194</label><br>
+        <label><input type="radio" name="a_18" value="4">Kraków &#8194</label><br>
+</div>
+<div id="z_19" class="zadanie">
+<h3>Zadania 19-21</h3>
+<p class="pytanie">Kiedy toczy się akcja dramatów Wyspiańskiego?</p>
+        <p>Wesele</p>
+        <select class="select form-control input-sm" name="a_19">
+            <option value="default">Wybierz...</option>
+            <option value="1">Noc listopadowa, czas współczesny autorowi</option>
+            <option value="2">Przełomowy moment bitwy o Olszynkę Grochowską, w lutym 1831</option>
+            <option value="3">Początek powstania listopadowego, 28/29 listopada 1830</option>
+        </select>
+        <br>
+        <p>Noc Listopadowa</p>
+        <select class="select form-control input-sm" name="a_20">
+            <option value="default">Wybierz...</option>
+            <option value="1">Noc listopadowa, czas współczesny autorowi</option>
+            <option value="2">Przełomowy moment bitwy o Olszynkę Grochowską, w lutym 1831</option>
+            <option value="3">Początek powstania listopadowego, 28/29 listopada 1830</option>
+        </select>
+        <br>
+        <p>Warszawianka</p>
+        <select class="select form-control input-sm" name="a_21">
+            <option value="default">Wybierz...</option>
+            <option value="1">Noc listopadowa, czas współczesny autorowi</option>
+            <option value="2">Przełomowy moment bitwy o Olszynkę Grochowską, w lutym 1831</option>
+            <option value="3">Początek powstania listopadowego, 28/29 listopada 1830</option>
+        </select>
+        <br>
+</div>
+<div id="z_22" class="zadanie">
+<h3>Zadanie 22</h3>
+<p class="pytanie">Literacka twórczość Wyspiańskiego w większości ma charakter</p>
+        <label><input type="radio" name="a_22" value="1">Sensacyjno-przygodowy &#8194</label><br>
+        <label><input type="radio" name="a_22" value="2">Żartobliwy &#8194</label><br>
+        <label><input type="radio" name="a_22" value="3">Autobiograficzny &#8194</label><br>
+        <label><input type="radio" name="a_22" value="4">Narodowo-dydaktyczny &#8194</label><br>
+</div>
+<div id="z_23" class="zadanie">
+<h3>Zadania 23-28</h3>
+<p class="pytanie">Wybierz techniki użyte do wykonania podanych dzieł</p>
+    <p>Barki na Sekwannie</p>
+    <select class="select" name="a_23">
+        <option value="default">Wybierz ...</option>
+        <option value="1">pastel</option>
+        <option value="2">polichromie</option>
+        <option value="3">olej na płótnie</option>
+        <option value="4">witraż</option>
+        <option value="5">olej na desce</option>
+        <option value="6">plakat</option>
+    </select>
+    <br>
+    <p>Wnętrze</p>
+    <select class="select" name="a_24">
+        <option value="default">Wybierz ...</option>
+        <option value="1">pastel</option>
+        <option value="2">polichromie</option>
+        <option value="3">olej na płótnie</option>
+        <option value="4">witraż</option>
+        <option value="5">olej na desce</option>
+        <option value="6">plakat</option>
+    </select>
+    <br>
+    <p>Bóg Ojciec. Stań się!</p>
+    <select class="select" name="a_25">
+        <option value="default">Wybierz ...</option>
+        <option value="1">pastel</option>
+        <option value="2">polichromie</option>
+        <option value="3">olej na płótnie</option>
+        <option value="4">witraż</option>
+        <option value="5">olej na desce</option>
+        <option value="6">plakat</option>
+    </select>
+    <br>
+    <p>Nasturcje</p>
+    <select class="select" name="a_26">
+        <option value="default">Wybierz ...</option>
+        <option value="1">pastel</option>
+        <option value="2">polichromie</option>
+        <option value="3">olej na płótnie</option>
+        <option value="4">witraż</option>
+        <option value="5">olej na desce</option>
+        <option value="6">plakat</option>
+    </select>
+    <br>
+    <p>Dziewczynka gasząca świecę</p>
+    <select class="select" name="a_27">
+        <option value="default">Wybierz ...</option>
+        <option value="1">pastel</option>
+        <option value="2">polichromie</option>
+        <option value="3">olej na płótnie</option>
+        <option value="4">witraż</option>
+        <option value="5">olej na desce</option>
+        <option value="6">plakat</option>
+    </select>
+    <br>
+    <p>Widok z okna pracowni na kopiec Kościuszki</p>
+    <select class="select" name="a_28">
+        <option value="default">Wybierz ...</option>
+        <option value="1">pastel</option>
+        <option value="2">polichromie</option>
+        <option value="3">olej na płótnie</option>
+        <option value="4">witraż</option>
+        <option value="5">olej na desce</option>
+        <option value="6">plakat</option>
+    </select>
+    <br>
+</div>
+<div id="z_29" class="zadanie">
+<h3>Zadanie 29</h3>
+<p class="pytanie">Ile dzieci miał ze swoją żoną Wyspiański?</p>
+        <label><input type="radio" name="a_29" value="1">2 &#8194</label><br>
+        <label><input type="radio" name="a_29" value="2">3 &#8194</label><br>
+        <label><input type="radio" name="a_29" value="3">4 &#8194</label><br>
+        <label><input type="radio" name="a_29" value="4">5 &#8194</label><br>
+</div>
+<div id="z_30" class="zadanie">
+<h3>Zadanie 30</h3>
+<p class="pytanie">W "Weselu" Stańczyk</p>
+        <label><input type="radio" name="a_30" value="1">Jest symbolem głupoty i zacofania &#8194</label><br>
+        <label><input type="radio" name="a_30" value="2">Popiera postawę dziennikarza &#8194</label><br>
+        <label><input type="radio" name="a_30" value="3">Poucza Stanisława Gąskę &#8194</label><br>
+        <label><input type="radio" name="a_30" value="4">Przekazuje dziennikarzowi kadyceusz &#8194</label><br>
+</div>
+<div id="z_31" class="zadanie">
+<h3>Zadanie 31</h3>
+<img src='/img/w5.jpg'>
+<p class="pytanie">Jak na imię na chłopiec na obrazie?</p>
+        <label><input type="radio" name="a_31" value="1">Jan &#8194</label><br>
+        <label><input type="radio" name="a_31" value="2">Stanisław &#8194</label><br>
+        <label><input type="radio" name="a_31" value="3">Krzysztof &#8194</label><br>
+        <label><input type="radio" name="a_31" value="4">Teodor &#8194</label><br>
+</div>
+<div id="z_32" class="zadanie">
+<h3>Zadanie 32</h3>
+<p class="pytanie">Ojciec Wyspiańskiego...</p>
+        <label><input type="radio" name="a_32" value="1">Był malarzem &#8194</label><br>
+        <label><input type="radio" name="a_32" value="2">Nie jest znany &#8194</label><br>
+        <label><input type="radio" name="a_32" value="3">Przez kilkanaście lat wychowywał syna samotnie &#8194</label><br>
+        <label><input type="radio" name="a_32" value="4">Miał na imię Mikołaj &#8194</label><br>
+        <label><input type="radio" name="a_32" value="5">Zmarł w domu dla ubogich &#8194</label><br>
+</div>
+<div id="z_33" class="zadanie">
+<h3>Zadanie 33</h3>
+<p class="pytanie">Jaki obraz Metejki interpretował Wyspiański jako swoja pierwsza próba literacka?</p>
+        <label><input type="radio" name="a_33" value="1">Stańczyk &#8194</label><br>
+        <label><input type="radio" name="a_33" value="2">Stefan Batory pod Pskowem &#8194</label><br>
+        <label><input type="radio" name="a_33" value="3">Wernyhora &#8194</label><br>
+        <label><input type="radio" name="a_33" value="4">Alchemik Sędziwój &#8194</label><br>
+</div>
+<div id="z_34" class="zadanie">
+<h3>Zadanie 34</h3>
+    <p class="pytanie">Jak nazywał się reżyser, który dokonał najsławniejszej inscenizacji "Wesela" Wyspiańskiego?</p>
+        <label><input type="radio" name="a_34" value="1">Kazimierz Dejmek &#8194</label><br>
+        <label><input type="radio" name="a_34" value="2">Adam Hanuszkiewicz &#8194</label><br>
+        <label><input type="radio" name="a_34" value="3">Andrzej Wajda &#8194</label><br>
+        <label><input type="radio" name="a_34" value="4">Jerzy Kawalerowicz &#8194</label><br>
+</div>
+<div id="z_35" class="zadanie">
+<h3>Zadanie 35</h3>
+<p class="pytanie">Jaki był powód odsunięcia się Wyspiańskiego od teatru krakowskiego?</p>
+        <label><input type="radio" name="a_35" value="1">Niezadowolenie poety ze scenicznej realizacji jego dzieł &#8194</label><br>
+        <label><input type="radio" name="a_35" value="2">Zbyt niska gaża reżyserska &#8194</label><br>
+        <label><input type="radio" name="a_35" value="3">Postępująca choroba &#8194</label><br>
+        <label><input type="radio" name="a_35" value="4">Niesnaski w środowisku aktorskim &#8194</label><br>
+</div>
+<div id="z_36" class="zadanie">
+<h3>Zadanie 36</h3>
+<p class="pytanie">Ile prac i szkiców zawiera Zielnik artysty?</p>
+        <label><input type="radio" name="a_36" value="1">50 &#8194</label><br>
+        <label><input type="radio" name="a_36" value="2">120 &#8194</label><br>
+        <label><input type="radio" name="a_36" value="3">170 &#8194</label><br>
+        <label><input type="radio" name="a_36" value="4">230 w środowisku aktorskim &#8194</label><br>
+</div>
+<div id="z_37" class="zadanie">
+<h3>Zadania 37-40</h3>
+<p class="pytanie">Przyporządkuj nazwy do obrazów</p>
+<img src='/img/w1.jpg' class="i1">
+<select class="select" name="a_37">
+        <option value="default">Wybierz ...</option>
+        <option value="1">Chochoły</option>
+        <option value="2">Zakola Wisły</option>
+        <option value="3">Widok z okna pracowni na Kopiec Kościuszki</option>
+        <option value="4">Planty o świcie</option>
+        <option value="5">Macieżyństwo</option>
+        <option value="6">Apollo - System słoneczny Kopernika</option>
+        <option value="7">Widok z okna pracowni na mury miejskie</option>
+</select><br><br>
+<img src='/img/w2.jpg' class="i1"><select class="select" name="a_38">
+        <option value="default">Wybierz ...</option>
+        <option value="1">Chochoły</option>
+        <option value="2">Zakola Wisły</option>
+        <option value="3">Widok z okna pracowni na Kopiec Kościuszki</option>
+        <option value="4">Planty o świcie</option>
+        <option value="5">Macieżyństwo</option>
+        <option value="6">Apollo - System słoneczny Kopernika</option>
+        <option value="7">Widok z okna pracowni na mury miejskie</option>
+</select><br> <br>
+<img src='/img/w7.jpg' class="i1"><select class="select" name="a_39">
+        <option value="default">Wybierz ...</option>
+        <option value="1">Chochoły</option>
+        <option value="2">Zakola Wisły</option>
+        <option value="3">Widok z okna pracowni na Kopiec Kościuszki</option>
+        <option value="4">Planty o świcie</option>
+        <option value="5">Macieżyństwo</option>
+        <option value="6">Apollo - System słoneczny Kopernika</option>
+        <option value="7">Widok z okna pracowni na mury miejskie</option>
+</select><br> <br>
+<img src='/img/w8.jpg' class="i1"><select class="select" name="a_40">
+        <option value="default">Wybierz ...</option>
+        <option value="1">Zakola Wisły</option>
+        <option value="2">Chochoły</option>
+        <option value="3">Widok z okna pracowni na Kopiec Kościuszki</option>
+        <option value="4">Planty o świcie</option>
+        <option value="5">Macieżyństwo</option>
+        <option value="6">Apollo - System słoneczny Kopernika</option>
+        <option value="7">Widok z okna pracowni na mury miejskie</option>
+</select><br> <br>
+</div>
+</form>

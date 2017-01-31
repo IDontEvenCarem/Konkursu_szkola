@@ -1,0 +1,34 @@
+<DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<script src="/js/jq.js"></script>
+<script type="text/javascript" 
+        src="/faye/client.js">
+        </script>
+<script>
+var client = new Faye.Client('/faye', {timeout: 120, retry: 5});
+
+var adminSubscription = client.subscribe('/admin', function (message) {  
+   
+    console.log(message);
+});
+$(function () {  
+    $('#b_rozpocznij').click(function () { client.publish('/admin', {t: 'start'}) });
+    $('#b_wstrzymaj').click(function () { client.publish('/admin', {t: 'pause'}) });
+    $('#b_zapis').click(function () { client.publish('/admin', {t: 'fsave'}) });
+    $('#b_msg').click(function () { client.publish('/admin', {t: 'msg', text: $("#i_msg").val()}) });
+    
+})
+</script>
+
+<button id="b_rozpocznij">Zacznij</button>
+<button id="b_wstrzymaj">Wstrzymaj</button>
+<button id="b_zapis">Wymuś zapis</button>
+<button id="b_msg">Wyślij wiadomość</button>
+<input id="i_msg" type="text" />
+</body>
+</html>
