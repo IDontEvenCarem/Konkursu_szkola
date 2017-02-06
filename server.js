@@ -9,6 +9,7 @@ var faye = require("faye");
 var morgan = require("morgan");
 
 app.use(express.static("public"));
+app.use(express.static("regulamin"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
@@ -112,7 +113,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('/regulamin', function (req, res) {
-  res.status(200);
+  res.redirect('/regulamin.html');
   res.end();
 })
 
