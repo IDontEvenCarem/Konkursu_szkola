@@ -2,8 +2,13 @@ var client = new Faye.Client('/faye', {timeout: 120, retry: 5});
 
 var hasItStart = false;
 var hasItEnd = false;
+var isReady = false;
+
+var klasa = '';
 
 var testId = "";
+
+var identifier;
 
 if(localStorage && "testId" in localStorage){
     testId = localStorage.testId;
@@ -34,9 +39,9 @@ var adminSubscription = client.subscribe('/admin', function (message) {
         SendData();
     }
     if(message.t == 'fin'){
-        if(message.id == testId){
+        if(message.id == identifier){
         console.log(message.val);
-        var s = '<h1 class="text-center">Gratulacje, zdobyłeś ' + message.val +'/40 punktów!</h1>';
+        var s = '<h1 class="text-center">Gratulacje, zdobyłeś ' + message.val +'/30 punktów!</h1>';
         console.log(s);
         $('#lock_div').html(s);
         $('#lock_div').show(600);
@@ -46,15 +51,22 @@ var adminSubscription = client.subscribe('/admin', function (message) {
 });
 
 $(function () {  
+    $('#gotowy').click(function () {  
+        klasa = $('#i_klasa').val();
+        identifier = klasa + '#' + testId;
+        console.log(klasa);
+    });
     $('#saveData').click(function () {  
         SendData();
     });
     $('#endTest').click(function () {  
+        $(this).html('Wysyłanie danych...')
         SendData();
-        sleep(800);
-        console.log("Sending data to finalize")
-        client.publish('/admin', {t: 'sum', id: testId})
+        console.log("Sending data to finalize");
         clearInterval(autoSend);
+        var z = setInterval(function () {client.publish('/admin', {t: 'sum', id: identifier, c: klasa}); clearInterval(z);}, 5000);
+        
+        
     });
 })
 
@@ -74,7 +86,7 @@ function SendData() {
     for (var key in d){
         if(!d.hasOwnProperty(key)) continue;
 
-        $.get('/api/test/submit/'+testId+'/'+d[key].name+'/'+d[key].value)
+        $.get('/api/test/submit/'+ klasa+'/' +testId+'/'+d[key].name+'/'+d[key].value)
     }
 }
 

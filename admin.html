@@ -13,14 +13,15 @@
 var client = new Faye.Client('/faye', {timeout: 120, retry: 5});
 
 var adminSubscription = client.subscribe('/admin', function (message) {  
-   
-    console.log(message);
+    $("#cons").append(JSON.stringify(message) + '<br>');
+    
 });
 $(function () {  
     $('#b_rozpocznij').click(function () { client.publish('/admin', {t: 'start'}) });
     $('#b_wstrzymaj').click(function () { client.publish('/admin', {t: 'pause'}) });
     $('#b_zapis').click(function () { client.publish('/admin', {t: 'fsave'}) });
     $('#b_msg').click(function () { client.publish('/admin', {t: 'msg', text: $("#i_msg").val()}) });
+    $('#b_anss').click(function () { $.get('/api/getans', function (data) { $('#ans').html(JSON.stringify(data)); }) });
     
 })
 </script>
@@ -30,5 +31,10 @@ $(function () {
 <button id="b_zapis">Wymuś zapis</button>
 <button id="b_msg">Wyślij wiadomość</button>
 <input id="i_msg" type="text" />
+<button id="b_anss">Ściągnij odpowiedzi</button>
+<br>
+<p id='cons'></p>
+<br>
+<p id="ans"></p>
 </body>
 </html>

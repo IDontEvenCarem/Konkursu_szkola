@@ -31,48 +31,14 @@ db.once('open', function () {
   console.log('Connected to mongo');
 })
 
-var poprawne = {
-  a_1: 'Pastel',
-  a_2: '1',
-  a_3: 'Rydla',
-  a_4: 'Życie',
-  a_5: 'Poeta',
-  a_6: 'Pan Młody',
-  a_7: 'Gospodarz',
-  a_8: 'Czepiec',
-  a_9: '4',
-  a_10: '2',
-  a_11: '1898',
-  a_12: '1901',
-  a_13: '1904',
-  a_14: '1903',
-  a_15: '2',
-  a_16: '3',
-  a_17: '1',
-  a_18: '2',
-  a_19: '1',
-  a_20: '3',
-  a_21: '2',
-  a_22: '4',
-  a_23: '3',
-  a_24: '6',
-  a_25: '4',
-  a_26: '2',
-  a_27: '3',
-  a_28: '1',
-  a_29: '2',
-  a_30: '3',
-  a_31: '2',
-  a_32: '5',
-  a_33: '2',
-  a_34: '3',
-  a_35: '1',
-  a_36: '3',
-  a_37: '1',
-  a_38: '6',
-  a_39: '3',
-  a_40: '7'
-}
+var poprawne = JSON.parse('[{"name":"a_1","value":"4"},{"name":"a_2","value":"1"},{"name":"a_3","value":"2"},{"name":"a_4_1","value":"Poeta"},{"name":"a_4_2","value":"Pan Młody"},{"name":"a_4_3","value":"Gospodarz"},{"name":"a_4_4","value":"Czepiec"},{"name":"a_5","value":"3"},{"name":"a_6","value":"2"},{"name":"a_7","value":"4"},{"name":"a_8_1","value":"1"},{"name":"a_8_2","value":"4"},{"name":"a_8_3","value":"2"},{"name":"a_8_4","value":"3"},{"name":"a_9","value":"3"},{"name":"a_10","value":"4"},{"name":"a_11","value":"3"},{"name":"a_12_1","value":"1"},{"name":"a_12_2","value":"3"},{"name":"a_12_3","value":"2"},{"name":"a_13_1","value":"1"},{"name":"a_13_2","value":"6"},{"name":"a_13_3","value":"3"},{"name":"a_13_4","value":"7"},{"name":"a_14","value":"4"},{"name":"a_15","value":"1"},{"name":"a_16_1","value":"5"},{"name":"a_16_2","value":"7"},{"name":"a_16_3","value":"1"},{"name":"a_16_4","value":"3"},{"name":"a_16_5","value":"1"}]');
+
+var poprawne = {a_1: '4', a_2: '1', a_3: '2', a_4_1:'Poeta', a_4_2: 'Pan Młody', a_4_3: 'Gospodarz', a_4_4: 'Czepiec',
+a_5: '3', a_6: '2', a_7: '4', a_8_1: '1', a_8_2: '4', a_8_3: '2', a_8_4: '3', a_9: '3', a_10: '4', a_11: '3',
+a_12_1: '1', a_12_2: '3', a_12_3: '2', a_13_1: '1',a_13_2: '6',a_13_3: '3',a_13_4: '7', a_14: 4, a_15: '1', 
+a_16_1: '5', a_16_2: '7', a_16_3: '1', a_16_4: '3', a_16_5: '1'}
+
+console.log(poprawne);
 
 var fClient = new faye.Client('http://localhost:8080/faye');
 fClient.subscribe('/admin', function (message) {  
@@ -154,6 +120,11 @@ app.get("/api/z/n", function (req, res) {
   });
 })
 
+app.get('/api/getans', function (req, res) {  
+  res.json(testResults);
+  res.end();
+})
+
 app.get('/test', function (req, res) {  
   res.status(200);
   res.sendFile(path.join(__dirname+'/test.html'))
@@ -180,18 +151,21 @@ app.get('/zapisy_graficzne', function (req, res) {
   res.sendFile(path.join(__dirname+'/zapisy_graficzne.html'))
 })
 
-app.get('/api/test/submit/:testId/:point/:ans', function (req, res) {  
-  if(testResults[req.params.testId] == null){
-    testResults[req.params.testId] = {};  
+app.get('/api/test/submit/:class/:testId/:point/:ans', function (req, res) {  
+  var identifier = req.params.class + '#' + req.params.testId;
+  if(testResults[identifier] == null){
+    testResults[identifier] = {};  
   }
-  testResults[req.params.testId][req.params.point] = req.params.ans; 
-  console.log("s[" + req.params.point + ' <- ' + req.params.ans + ' ]')
-  res.write('a');
+  testResults[identifier][req.params.point] = req.params.ans; 
+  console.log("s[" + identifier + ' :: '  + req.params.point + ' <<< ' + req.params.ans + ' ]')
+  res.write('<html><head></head><body></body></html>');
   res.end();
 });
 
+
+
 app.get('/api/zadania', function (req, res) {  
-  res.sendFile(path.join(__dirname+'/zadania.txt'));
+  res.sendFile(path.join(__dirname+'/zadania2.txt'));
 });
 
 bayeux.on('handshake', function (clientId) { console.log('f[Client connected '+clientId+' ]'); });

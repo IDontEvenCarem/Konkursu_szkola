@@ -11,18 +11,15 @@
 </div>
 <div id="z_2" class="zadanie">
     <h3>Zadanie 2</h3>
-    <p class="pytanie">W jakim stylu tworzył wyspiański? Podaj dwa nurty</p>
-
+    <p class="pytanie">Jak miała na imię żona Wyspiańskiego?</p>
         <label><input type="radio" name="a_2" value="1">Teofila Teodora Pytko &#8194</label><br>
         <label><input type="radio" name="a_2" value="2">Teofila Stankiewiczówna &#8194</label><br>
         <label><input type="radio" name="a_2" value="3">Teodora Spytko &#8194</label><br>
         <label><input type="radio" name="a_2" value="4">Janina Rogowska &#8194</label><br>
-    
 </div>
 <div id="z_3" class="zadanie">
     <h3>Zadanie 3</h3>
     <p class="pytanie">Czyje wesele zainspirowało Wyspiańskiego do napisania "Wesela"?</p>
-
             <label><input type="radio" name="a_3" value="Mehoffera">Mehoffera &#8194</label><br>
             <label><input type="radio" name="a_3" value="Szujkowskiego">Szujkowskiego &#8194</label><br>
             <label><input type="radio" name="a_3" value="Przybyszewskiego">Przybyszewskiego &#8194</label><br>
