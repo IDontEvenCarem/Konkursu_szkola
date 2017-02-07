@@ -1,12 +1,25 @@
 var client = new Faye.Client('/faye', {timeout: 120, retry: 5});
 
 var hasItStart = false;
-var hasItEnd = false;
 var isReady = false;
+var hasEnded = false;
 
 var klasa = '';
 
 var testId = "";
+
+var checkIfStart = setInterval(function () {  
+    $.get('/api/hasItStart', function (data) { 
+        if(data.hasItStart == true){
+            if(isReady == true){
+                if(hasEnded == false){
+                    $('#lock_div').hide(600);
+                    $("#content").show(600);
+                }
+            };
+        };
+    });
+}, 15000)
 
 var identifier;
 
@@ -40,6 +53,7 @@ var adminSubscription = client.subscribe('/admin', function (message) {
     }
     if(message.t == 'fin'){
         if(message.id == identifier){
+        hasEnded = true;
         console.log(message.val);
         var s = '<h1 class="text-center">Gratulacje, zdobyłeś ' + message.val +'/30 punktów!</h1>';
         console.log(s);
@@ -53,22 +67,28 @@ var adminSubscription = client.subscribe('/admin', function (message) {
 $(function () {  
     $('#gotowy').click(function () {  
         klasa = $('#i_klasa').val();
-        identifier = klasa + '#' + testId;
+        identifier = klasa + '_' + testId;
         console.log(klasa);
-        $('#lock_div').hide(600);
-        $("#content").show(600);
+        isReady = true;
     });
     $('#saveData').click(function () {  
         SendData();
     });
     $('#endTest').click(function () {  
+        hasEnded = true;
         $(this).html('Wysyłanie danych...')
         SendData();
         console.log("Sending data to finalize");
         clearInterval(autoSend);
-        var z = setInterval(function () {client.publish('/admin', {t: 'sum', id: identifier, c: klasa}); clearInterval(z);}, 5000);
-        
-        
+        sleep(5000);
+        client.publish('/admin', {t: 'sum', id: identifier, c: klasa});
+        sleep(3000);
+        $.get('/api/getres/'+identifier, function (data) { 
+            var s = '<h1 class="text-center">Gratulacje, zdobyłeś ' + data +'/30 punktów!</h1>';
+            $('#lock_div').html(s);
+            $('#lock_div').show(600);
+            $('#content').hide(600);
+        });
     });
 })
 

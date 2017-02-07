@@ -17,8 +17,8 @@ var adminSubscription = client.subscribe('/admin', function (message) {
     
 });
 $(function () {  
-    $('#b_rozpocznij').click(function () { client.publish('/admin', {t: 'start'}) });
-    $('#b_wstrzymaj').click(function () { client.publish('/admin', {t: 'pause'}) });
+    $('#b_rozpocznij').click(function () { $.get('/api/startuj', function (data) {  }); });
+    $('#b_wstrzymaj').click(function () { $.get('/api/pauzuj', function (data) {  });});
     $('#b_zapis').click(function () { client.publish('/admin', {t: 'fsave'}) });
     $('#b_msg').click(function () { client.publish('/admin', {t: 'msg', text: $("#i_msg").val()}) });
     $('#b_anss').click(function () { $.get('/api/getans', function (data) { $('#ans').html(JSON.stringify(data)); }) });

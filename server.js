@@ -8,6 +8,8 @@ var fs = require("fs");
 var faye = require("faye");
 var morgan = require("morgan");
 
+var hasItStart = false;
+
 app.use(express.static("public"));
 app.use(express.static("regulamin"));
 app.use(bodyParser.json());
@@ -20,16 +22,6 @@ var listOfZapisy = [];
 var listOfZapisyGraficzne = [];
 
 var testResults = {};
-
-mongoose.Promise = global.Promise;
-
-mongoose.connect('mongodb://localhost/test');
-
-var db = mongoose.connection;
-
-db.once('open', function () {
-  console.log('Connected to mongo');
-})
 
 var poprawne = JSON.parse('[{"name":"a_1","value":"4"},{"name":"a_2","value":"1"},{"name":"a_3","value":"2"},{"name":"a_4_1","value":"Poeta"},{"name":"a_4_2","value":"Pan Młody"},{"name":"a_4_3","value":"Gospodarz"},{"name":"a_4_4","value":"Czepiec"},{"name":"a_5","value":"3"},{"name":"a_6","value":"2"},{"name":"a_7","value":"4"},{"name":"a_8_1","value":"1"},{"name":"a_8_2","value":"4"},{"name":"a_8_3","value":"2"},{"name":"a_8_4","value":"3"},{"name":"a_9","value":"3"},{"name":"a_10","value":"4"},{"name":"a_11","value":"3"},{"name":"a_12_1","value":"1"},{"name":"a_12_2","value":"3"},{"name":"a_12_3","value":"2"},{"name":"a_13_1","value":"1"},{"name":"a_13_2","value":"6"},{"name":"a_13_3","value":"3"},{"name":"a_13_4","value":"7"},{"name":"a_14","value":"4"},{"name":"a_15","value":"1"},{"name":"a_16_1","value":"5"},{"name":"a_16_2","value":"7"},{"name":"a_16_3","value":"1"},{"name":"a_16_4","value":"3"},{"name":"a_16_5","value":"1"}]');
 
@@ -51,6 +43,7 @@ fClient.subscribe('/admin', function (message) {
       }
     }
     fClient.publish('/admin', {t: 'fin', id: message.id, val: p});
+    testResults[message.id].score = p;
     console.log('final[ '+message.id + ' >>' + p +' ]');
   }
 });
@@ -125,6 +118,15 @@ app.get('/api/getans', function (req, res) {
   res.end();
 })
 
+app.get('/api/getres/:iden', function (req, res) {
+  console.log(testResults);
+  console.log(req.params.iden);
+  console.log(testResults[req.params.iden]);
+  var r = testResults[req.params.iden]['score'].toString();
+  res.write(r);
+  res.end();
+})
+
 app.get('/test', function (req, res) {  
   res.status(200);
   res.sendFile(path.join(__dirname+'/test.html'))
@@ -152,7 +154,7 @@ app.get('/zapisy_graficzne', function (req, res) {
 })
 
 app.get('/api/test/submit/:class/:testId/:point/:ans', function (req, res) {  
-  var identifier = req.params.class + '#' + req.params.testId;
+  var identifier = req.params.class + '_' + req.params.testId;
   if(testResults[identifier] == null){
     testResults[identifier] = {};  
   }
@@ -162,7 +164,15 @@ app.get('/api/test/submit/:class/:testId/:point/:ans', function (req, res) {
   res.end();
 });
 
+app.get('/api/startuj', function (req, res) {  
+  hasItStart = true;
+});
 
+app.get('/api/pauzuj', function (req, res) {  
+  hasItStart = false;
+});
+
+app.get('/api/hasItStart', function (req, res) { res.json({hasItStart: hasItStart}); res.end(); });
 
 app.get('/api/zadania', function (req, res) {  
   res.sendFile(path.join(__dirname+'/zadania2.txt'));
