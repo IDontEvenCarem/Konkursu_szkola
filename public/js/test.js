@@ -20,7 +20,7 @@ if(localStorage && "testId" in localStorage){
 }
 
 var adminSubscription = client.subscribe('/admin', function (message) {  
-    
+    console.log(message);
     if(message.t == 'msg'){
         window.alert(message.text)
     }
@@ -28,7 +28,7 @@ var adminSubscription = client.subscribe('/admin', function (message) {
         $('#lock_div').hide(600);
         $("#content").show(600);
         if(hasItStart == false){
-            $.get("/api/zadania", function (data) { $("#content").html(data); })
+            $.get("/api/zadania", function (data) { $("#content").html(data); });
         }
     }
     if(message.t == "pause"){
@@ -55,6 +55,8 @@ $(function () {
         klasa = $('#i_klasa').val();
         identifier = klasa + '#' + testId;
         console.log(klasa);
+        $('#lock_div').hide(600);
+        $("#content").show(600);
     });
     $('#saveData').click(function () {  
         SendData();
